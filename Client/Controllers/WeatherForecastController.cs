@@ -3,30 +3,16 @@ using Microsoft.AspNetCore.Mvc;
 namespace Client.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("Client")]
 public class WeatherForecastController : ControllerBase
 {
-    private static readonly string[] Summaries = new[]
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
 
-    private readonly ILogger<WeatherForecastController> _logger;
-
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    [HttpGet(Name = "TryGet")]
+    public async Task<string> Get()
     {
-        _logger = logger;
-    }
-
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get()
-    {
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+        var httpClient = new HttpClient();
+        var response = await httpClient.GetAsync("http://localhost:5089/server/HelloWorld");
+        var readAsStringAsync = await response.Content.ReadAsStringAsync();
+        return readAsStringAsync;
     }
 }

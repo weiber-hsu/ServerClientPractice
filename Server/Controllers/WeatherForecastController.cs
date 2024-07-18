@@ -10,6 +10,6 @@ public class WeatherForecastController : ControllerBase
     [Route("HelloWorld")]
     public string GetHelloWorld()
     {
-        return "Hello World";
+        return "Server Hello World";
     }
 }
