@@ -11,4 +11,19 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\net7.0\appsettings.Development.json" />
+      <Content Include="bin\Debug\net7.0\appsettings.json" />
+      <Content Include="bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll" />
+      <Content Include="bin\Debug\net7.0\Microsoft.OpenApi.dll" />
+      <Content Include="bin\Debug\net7.0\Server.deps.json" />
+      <Content Include="bin\Debug\net7.0\Server.dll" />
+      <Content Include="bin\Debug\net7.0\Server.exe" />
+      <Content Include="bin\Debug\net7.0\Server.pdb" />
+      <Content Include="bin\Debug\net7.0\Server.runtimeconfig.json" />
+      <Content Include="bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll" />
+      <Content Include="bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+      <Content Include="bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+    </ItemGroup>
+
 </Project>
